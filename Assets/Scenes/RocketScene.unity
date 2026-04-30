@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63079b6543c6a8349922b933bcaf4994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RocketScript
-  fuerzaDespegue: 100000
+  fuerzaDespegue: 60000
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63079b6543c6a8349922b933bcaf4994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RocketScript
-  fuerzaDespegue: 100000
+  fuerzaDespegue: 60000
 --- !u!1 &1534216347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,7 +2483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63079b6543c6a8349922b933bcaf4994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RocketScript
-  fuerzaDespegue: 100000
+  fuerzaDespegue: 60000
 --- !u!1 &2002807144
 GameObject:
   m_ObjectHideFlags: 0
