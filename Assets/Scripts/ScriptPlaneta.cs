@@ -3,15 +3,16 @@ using UnityEngine;
 
 public class ScriptPlaneta : MonoBehaviour
 {
-	public float gravedad = 50f;
+	public float gravedad = 6673f;
+	public GameObject Player;
 
-	public List<Rigidbody> cuerpos = new List<Rigidbody>();
+	public Rigidbody player;
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
     {
-        
-    }
+		player = Player.GetComponent<Rigidbody>();
+	}
 
     // Update is called once per frame
     void Update()
@@ -21,23 +22,18 @@ public class ScriptPlaneta : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		for (int i = 0; i < cuerpos.Count; i++)
-		{
-			Rigidbody cuerpo = cuerpos[i];
+		if (player == null) return;
 
-			if (cuerpo == null) continue;
+		Vector3 direccion = transform.position - player.position;
 
-			Vector3 direccion = transform.position - cuerpo.position;
+		float distancia = direccion.magnitude;
 
-			float distancia = direccion.magnitude;
+		if (distancia == 0) return;
 
-			if (distancia == 0) continue;
+		float fuerza = gravedad / (distancia * distancia);
 
-			float fuerza = gravedad / (distancia * distancia);
+		Vector3 fuerzaFinal = direccion.normalized * fuerza;
 
-			Vector3 fuerzaFinal = direccion.normalized * fuerza;
-
-			cuerpo.AddForce(fuerzaFinal, ForceMode.Acceleration);
-		}
+		player.AddForce(fuerzaFinal, ForceMode.Acceleration);
 	}
 }
